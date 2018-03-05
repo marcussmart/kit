@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: mybatis-generator-core-1.3.5.jar mysql-connector-java-5.1.
+ 38.jar
+Main-Class: com.dou.generator.Main
+
