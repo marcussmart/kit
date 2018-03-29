@@ -19,9 +19,14 @@ public class OrderWaite {
         try {
             for (int n = 0; n < count; n++) {
                 synchronized (lock) {
-                    while (tag != 0) {
-//                        System.out.println("\ttag=" + tag + " number wait");
-                        lock.wait();
+                    while (true) {
+                        System.out.println("\tn: tag=" + tag);
+                        if (tag != 0) {
+    //                        System.out.println("\ttag=" + tag + " number wait");
+                            lock.wait();
+                        } else {
+                            break;
+                        }
                     }
 
                     System.out.println(MessageFormat.format("{0}, {1}", i, i + 1));
@@ -41,9 +46,14 @@ public class OrderWaite {
         try {
             for (int n = 0; n < count; n++) {
                 synchronized (lock) {
-                    while (tag != 1) {
-//                        System.out.println("\ttag=" + tag + " letter wait");
-                        lock.wait();
+                    while (true) {
+                        System.out.println("\tl: tag=" + tag);
+                        if (tag != 1) {
+    //                        System.out.println("\ttag=" + tag + " letter wait");
+                            lock.wait();
+                        } else {
+                            break;
+                        }
                     }
 
 //                    System.out.print("char: ");
@@ -64,9 +74,14 @@ public class OrderWaite {
         try {
             for (int n = 0; n < count; n++) {
                 synchronized (lock) {
-                    while (tag != 2) {
-//                        System.out.println("\ttag=" + tag + " upper letter wait");
-                        lock.wait();
+                    while (true) {
+                        System.out.println("\tL: tag=" + tag);
+                        if (tag != 2) {
+//                          System.out.println("\ttag=" + tag + " upper letter wait");
+                            lock.wait();
+                        } else {
+                            break;
+                        }
                     }
 
 //                    System.out.print("upper char: ");
