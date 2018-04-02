@@ -3,7 +3,7 @@ package com.ken.spring.boot.dao.domain;
 import java.io.Serializable;
 
 public class Hotel implements Serializable {
-    private static final long serialVersionUID = 7900008690545842341L;
+    private static final long serialVersionUID = -1449899732516439164L;
 
     /*
      * id

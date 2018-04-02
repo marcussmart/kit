@@ -49,6 +49,12 @@
         <table tableName="City" domainObjectName="City" mapperName="{0}Dao" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
+
+
+
+        <table tableName="ws_withdraw" domainObjectName="Withdraw" mapperName="{0}Dao" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
 -->
 
         <table tableName="Hotel" domainObjectName="Hotel" mapperName="{0}Dao" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">

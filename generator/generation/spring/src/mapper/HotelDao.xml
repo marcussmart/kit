@@ -1,117 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ken.spring.boot.dao.HotelDao">
-  <resultMap id="BaseResultMap" type="com.ken.spring.boot.dao.domain.Hotel">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="city" jdbcType="INTEGER" property="city" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="address" jdbcType="VARCHAR" property="address" />
-    <result column="zip" jdbcType="VARCHAR" property="zip" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, city, name, address, zip
-  </sql>
-  <select id="select" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from hotel
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="delete" parameterType="java.lang.Integer">
-    delete from hotel
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ken.spring.boot.dao.domain.Hotel" useGeneratedKeys="true">
-    insert into hotel
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="city != null">
-        city,
-      </if>
-      <if test="name != null">
-        name,
-      </if>
-      <if test="address != null">
-        address,
-      </if>
-      <if test="zip != null">
-        zip,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="city != null">
-        #{city,jdbcType=INTEGER},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="address != null">
-        #{address,jdbcType=VARCHAR},
-      </if>
-      <if test="zip != null">
-        #{zip,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="update" parameterType="com.ken.spring.boot.dao.domain.Hotel">
-    update hotel
-    <set>
-      <if test="city != null">
-        city = #{city,jdbcType=INTEGER},
-      </if>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="address != null">
-        address = #{address,jdbcType=VARCHAR},
-      </if>
-      <if test="zip != null">
-        zip = #{zip,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectOne" parameterType="com.ken.spring.boot.dao.domain.Hotel" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from hotel
-    <where>
-      <if test="id != null">
-        and id = #{id,jdbcType=INTEGER}
-      </if>
-      <if test="city != null">
-        and city = #{city,jdbcType=INTEGER}
-      </if>
-      <if test="name != null">
-        and name = #{name,jdbcType=VARCHAR}
-      </if>
-      <if test="address != null">
-        and address = #{address,jdbcType=VARCHAR}
-      </if>
-      <if test="zip != null">
-        and zip = #{zip,jdbcType=VARCHAR}
-      </if>
-    </where>
-  </select>
-  <select id="selectSelective" parameterType="com.ken.spring.boot.dao.domain.Hotel" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from hotel
-    <where>
-      <if test="id != null">
-        and id = #{id,jdbcType=INTEGER}
-      </if>
-      <if test="city != null">
-        and city = #{city,jdbcType=INTEGER}
-      </if>
-      <if test="name != null">
-        and name = #{name,jdbcType=VARCHAR}
-      </if>
-      <if test="address != null">
-        and address = #{address,jdbcType=VARCHAR}
-      </if>
-      <if test="zip != null">
-        and zip = #{zip,jdbcType=VARCHAR}
-      </if>
-    </where>
-  </select>
+    <resultMap id="BaseResultMap" type="com.ken.spring.boot.dao.domain.Hotel">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="city" jdbcType="INTEGER" property="city"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="zip" jdbcType="VARCHAR" property="zip"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, city, name, address, zip
+    </sql>
+    <select id="select" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from hotel
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from hotel
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ken.spring.boot.dao.domain.Hotel"
+            useGeneratedKeys="true">
+        insert into hotel
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="city != null">
+                city,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="zip != null">
+                zip,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="city != null">
+                #{city,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="zip != null">
+                #{zip,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="com.ken.spring.boot.dao.domain.Hotel">
+        update hotel
+        <set>
+            <if test="city != null">
+                city = #{city,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                address = #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="zip != null">
+                zip = #{zip,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectOne" parameterType="com.ken.spring.boot.dao.domain.Hotel" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from hotel
+        <where>
+            <if test="id != null">
+                and id = #{id,jdbcType=INTEGER}
+            </if>
+            <if test="city != null">
+                and city = #{city,jdbcType=INTEGER}
+            </if>
+            <if test="name != null">
+                and name = #{name,jdbcType=VARCHAR}
+            </if>
+            <if test="address != null">
+                and address = #{address,jdbcType=VARCHAR}
+            </if>
+            <if test="zip != null">
+                and zip = #{zip,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+    <select id="selectSelective" parameterType="com.ken.spring.boot.dao.domain.Hotel" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from hotel
+        <where>
+            <if test="id != null">
+                and id = #{id,jdbcType=INTEGER}
+            </if>
+            <if test="city != null">
+                and city = #{city,jdbcType=INTEGER}
+            </if>
+            <if test="name != null">
+                and name = #{name,jdbcType=VARCHAR}
+            </if>
+            <if test="address != null">
+                and address = #{address,jdbcType=VARCHAR}
+            </if>
+            <if test="zip != null">
+                and zip = #{zip,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
 </mapper>
